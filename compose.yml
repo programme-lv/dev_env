@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    image: mcr.microsoft.com/devcontainers/go:dev-1.21
+    build: .
     restart: unless-stopped
     volumes:
       - .:/workspace:cached
