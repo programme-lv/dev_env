@@ -2,8 +2,10 @@ version: '3'
 
 services:
   backend:
-    build: ./backend
+    image: mcr.microsoft.com/devcontainers/go:dev-1.21
     restart: unless-stopped
+    volumes:
+      - .:/workspace:cached
     depends_on:
       rabbitmq:
         condition: service_healthy
@@ -15,6 +17,9 @@ services:
       SQLX_CONN_STRING: "host=postgres port=5432 user=proglv password=proglv dbname=proglv sslmode=disable"
       AMQP_CONN_STRING: "amqp://proglv:pass@rabbitmq:5672/"
       REDIS_CONN_STRING: "redis:6379"
+    ports:
+      - "3001:3001"
+    command: ["sleep", "infinity"]
 
   rabbitmq:
     image: "rabbitmq:3-management"
