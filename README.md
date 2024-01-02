@@ -12,5 +12,6 @@
 7. To attach to website (Next.js service)
    1. Select "Reopen in container" action, select "website";
    2. In website devcontainer, execute "yarn install" & "yarn run dev";
+8. If backend+website started successfully, proglv is on localhost;
 
-Unfortunately, each time after attaching to container, vscode closes folder. To attach to another devcontainer, reopen vscode in this folder again.
+Unfortunately, each time after attaching to container, vscode closes folder. To attach to another devcontainer, reopen vscode in this folder again. Use Ctrl+r shortcut for faster movement.
