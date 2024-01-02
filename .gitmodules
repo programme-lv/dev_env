@@ -1,9 +1,11 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/programme-lv/backend
+	branch = dev
 [submodule "website"]
 	path = website
 	url = https://github.com/programme-lv/website
+	branch = dev
 [submodule "database"]
 	path = database
 	url = https://github.com/programme-lv/database

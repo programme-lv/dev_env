@@ -1,4 +1,4 @@
-After `git clone`, `git submodule update --init --recursive` to get all submodules.
+After `git clone`, exec `git submodule update --init --recursive --remote` to get all submodules.
 
 1. Setup docker engine with compose or docker desktop;
 2. Install VSCode with extension "Dev Containers";
