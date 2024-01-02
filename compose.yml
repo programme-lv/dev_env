@@ -12,24 +12,14 @@ services:
       - caddy_data:/data
       - caddy_config:/config
 
-  website:
+  proglv:
     build: .
     restart: unless-stopped
     volumes:
       - .:/workspace:cached
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
-    command: ["sleep", "infinity"]
-    environment:
-      BACKEND_URI: "http://backend:3001/query"
-
-  backend:
-    build: .
-    restart: unless-stopped
-    volumes:
-      - .:/workspace:cached
+      - "3001:3001"
     depends_on:
       rabbitmq:
         condition: service_healthy
@@ -37,13 +27,12 @@ services:
         condition: service_healthy
       postgres:
         condition: service_healthy
+    command: ["sleep", "infinity"]
     environment:
+      BACKEND_URI: "http://proglv:3001/query"
       SQLX_CONN_STRING: "host=postgres port=5432 user=proglv password=proglv dbname=proglv sslmode=disable"
       AMQP_CONN_STRING: "amqp://proglv:pass@rabbitmq:5672/"
       REDIS_CONN_STRING: "redis:6379"
-    ports:
-      - "3001:3001"
-    command: ["sleep", "infinity"]
 
   rabbitmq:
     image: "rabbitmq:3-management"

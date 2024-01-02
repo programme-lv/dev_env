@@ -1,0 +1,12 @@
+{
+    "folders": [
+        {
+            "path": "./backend",
+            "name": "Backend (Go API)"
+        },
+        {
+            "path": "./website",
+            "name": "Website (Next.js)"
+        }
+    ]
+}

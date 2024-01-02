@@ -1,7 +1,0 @@
-{
-    "name": "Website Container",
-    "dockerComposeFile": ["../../compose.yml"],
-    "service": "website",
-    "shutdownAction": "none",
-    "workspaceFolder": "/workspace/website"
-}

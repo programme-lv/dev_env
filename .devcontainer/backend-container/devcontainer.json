@@ -1,7 +1,0 @@
-{
-    "name": "Backend Container",
-    "dockerComposeFile": ["../../compose.yml"],
-    "service": "backend",
-    "shutdownAction": "none",
-    "workspaceFolder": "/workspace/backend"
-}

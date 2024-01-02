@@ -1,0 +1,7 @@
+{
+    "name": "Proglv Container",
+    "dockerComposeFile": ["../../compose.yml"],
+    "service": "proglv",
+    "shutdownAction": "none",
+    "workspaceFolder": "/workspace"
+}

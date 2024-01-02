@@ -1,6 +1,6 @@
 localhost {
 	handle_path /api/* {
-		reverse_proxy http://backend:3001
+		reverse_proxy http://proglv:3001
 	}
-	reverse_proxy website:3000
+	reverse_proxy proglv:3000
 }
