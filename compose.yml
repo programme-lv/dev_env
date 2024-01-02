@@ -22,6 +22,8 @@ services:
     depends_on:
       - backend
     command: ["sleep", "infinity"]
+    environment:
+      BACKEND_URI: "http://backend:3001/query"
 
   backend:
     build: .
