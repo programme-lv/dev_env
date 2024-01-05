@@ -19,3 +19,8 @@ ENV PATH=$PATH:/usr/local/node/bin
 RUN node -v
 RUN npm -v
 RUN npm install -g yarn
+
+# Install Postgres, and gnupg
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update
+RUN apt-get install -y postgresql postgresql-contrib gnupg

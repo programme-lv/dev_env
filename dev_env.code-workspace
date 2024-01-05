@@ -7,6 +7,10 @@
         {
             "path": "./website",
             "name": "Website (Next.js)"
+        },
+        {
+            "path": "./database",
+            "name": "Database migrations"
         }
     ]
 }
