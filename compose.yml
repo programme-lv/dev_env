@@ -15,9 +15,9 @@ services:
   proglv:
     build: .
     restart: unless-stopped
+    privileged: true
     volumes:
       - .:/workspace:cached
-      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "3000:3000"
       - "3001:3001"
@@ -28,7 +28,6 @@ services:
         condition: service_healthy
       postgres:
         condition: service_healthy
-    command: ["sleep", "infinity"]
     environment:
       BACKEND_URI: "http://proglv:3001/query"
       SQLX_CONN_STRING: "host=postgres port=5432 user=proglv password=proglv dbname=proglv sslmode=disable"
