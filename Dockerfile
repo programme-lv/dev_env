@@ -31,5 +31,9 @@ RUN cd backend && go mod download
 RUN git clone https://github.com/programme-lv/website.git
 RUN cd website && yarn install
 
+# Install flyway
+ARG FLYWAY_URL=https://download.red-gate.com/maven/release/com/redgate/flyway/flyway-commandline/10.4.1/flyway-commandline-10.4.1-linux-x64.tar.gz
+RUN wget -qO- ${FLYWAY_URL} | tar -xvz && ln -s `pwd`/flyway-10.4.1/flyway /usr/local/bin 
+
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["sleep", "infinity"]
