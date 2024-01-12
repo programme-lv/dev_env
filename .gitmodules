@@ -9,6 +9,3 @@
 [submodule "database"]
 	path = database
 	url = https://github.com/programme-lv/database
-[submodule "tester"]
-	path = tester
-	url = https://github.com/programme-lv/tester.git
